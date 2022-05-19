@@ -1,4 +1,10 @@
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+}
 
-setTimeout(() => {
-  console.log("");
-}, 2000);
+
+
+
+// setTimeout(() => {
+//   console.log("");
+// }, 2000);
