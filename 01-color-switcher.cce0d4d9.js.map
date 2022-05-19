@@ -1,1 +1,0 @@
-{"version":3,"sources":["js/01-color-switcher.js"],"names":["setTimeout","console","log"],"mappings":";AACAA,WAAW,KACTC,QAAQC,IAAI,KACX","file":"01-color-switcher.cce0d4d9.js","sourceRoot":"../src","sourcesContent":["\nsetTimeout(() => {\n  console.log(\"\");\n}, 2000);"]}
