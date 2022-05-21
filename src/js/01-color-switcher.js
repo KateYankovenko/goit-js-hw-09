@@ -1,11 +1,11 @@
 const startBtn = document.querySelector("button[data-start]");
 const stopBtn = document.querySelector("button[data-stop]");
 const body = document.querySelector("body");
-
+startBtn.addEventListener("click", onClick);
 
 const onClick = () => {
   setTimeout(() => {
-    alert("I love async JS!");
+    body;
   }, 1000);
 };
 // const timerId = setTimeout(callback, delay, arg1, arg2);
