@@ -5,6 +5,10 @@ const body = document.querySelector("body");
 // body color changes bcz of the setTimeout callback will appear.
 startBtn.addEventListener("click", onClick);
 
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+}
+
 const onClick = () => {
   setTimeout(() => {
     body;
@@ -12,9 +16,7 @@ const onClick = () => {
 };
 // const timerId = setTimeout(callback, delay, arg1, arg2);
 
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-}
+
 
 
 
