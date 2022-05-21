@@ -1,6 +1,8 @@
 const startBtn = document.querySelector("button[data-start]");
 const stopBtn = document.querySelector("button[data-stop]");
 const body = document.querySelector("body");
+// One second after clicking the startBtn, 
+// body color changes bcz of the setTimeout callback will appear.
 startBtn.addEventListener("click", onClick);
 
 const onClick = () => {
