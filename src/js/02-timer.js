@@ -11,3 +11,5 @@ import { Confirm } from 'notiflix/build/notiflix-confirm-aio';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import { Block } from 'notiflix/build/notiflix-block-aio';
 
+const dataPicker = document.querySelector("#datetime-picker");
+const startBtn = document.querySelector("button[data-start]");

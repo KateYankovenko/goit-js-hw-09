@@ -3,7 +3,7 @@ const stopBtn = document.querySelector("button[data-stop]");
 const body = document.querySelector("body");
 // One second after clicking the startBtn, 
 // body color changes bcz of the setTimeout callback will appear.
-startBtn.addEventListener("click", onClick);
+
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
@@ -11,9 +11,10 @@ function getRandomHexColor() {
 
 const onClick = () => {
   setTimeout(() => {
-    body;
+    console.log("set time");
   }, 1000);
 };
+startBtn.addEventListener("click", onClick);
 // const timerId = setTimeout(callback, delay, arg1, arg2);
 
 
