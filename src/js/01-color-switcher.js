@@ -6,7 +6,7 @@ let timerId = null;
 // body color changes bcz of the setTimeout callback will appear.
 
 
-function getRandomHexColor() {
+const randomClr = function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
 
