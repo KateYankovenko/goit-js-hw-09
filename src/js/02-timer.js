@@ -13,3 +13,13 @@ import { Block } from 'notiflix/build/notiflix-block-aio';
 
 const dataPicker = document.querySelector("#datetime-picker");
 const startBtn = document.querySelector("button[data-start]");
+
+const options = {
+  enableTime: true,
+  time_24hr: true,
+  defaultDate: new Date(),
+  minuteIncrement: 1,
+  onClose(selectedDates) {
+    console.log(selectedDates[0]);
+  },
+};
