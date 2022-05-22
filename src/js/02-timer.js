@@ -28,10 +28,10 @@ const options = {
     //   Notify(selectedDates[0]);
        if(selectedDates[0].getTime() < Date.now()) {
            Notify.failure("Please choose a date in the future!");
-          startBtn.disabled = true;
+          refs.startBtn.disabled = true;
        } else {
            deadline = selectedDates[0];
-           startBtn.disabled = false;
+           refs.startBtn.disabled = false;
       }
     },  
 };
