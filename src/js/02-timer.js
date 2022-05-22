@@ -7,10 +7,11 @@ import Notiflix from 'notiflix';
 //notification module
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
+const refs = {
+ dataPicker: document.querySelector("#datetime-picker"),
+ startBtn: document.querySelector("button[data-start]"),
+}
 
-
-const dataPicker = document.querySelector("#datetime-picker");
-const startBtn = document.querySelector("button[data-start]");
 
 const options = {
   enableTime: true,
