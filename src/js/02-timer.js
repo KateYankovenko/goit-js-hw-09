@@ -18,6 +18,10 @@ const refs = {
 
 let deadline = null;
 
+refs.startBtn.addEventListener('click', () => {
+   timer.start() 
+});
+
 //options object from flatpickr lib
 const options = {
   enableTime: true,
@@ -38,6 +42,17 @@ const options = {
 // функція flatpickr(selector, options)
 flatpickr("#datetime-picker", options);
 
+class Timer {
+    constructor() {
+        this.intervalId = null;
+        this.isActive = false;
+        this.onTick = onTick;
+    }
+    start() {
+    if (this.isActive) {
+        return;
+    }
+
 // Натисканням на кнопку «Start» скрипт повинен обчислювати раз
 // на секунду, скільки часу залишилось до вказаної дати, і
 // оновлювати інтерфейс таймера, показуючи чотири цифри: дні,
@@ -45,10 +60,11 @@ flatpickr("#datetime-picker", options);
 
 const dataTimePick = () => {
     onStartBtnPress(() => {
-        
+        const currentTime = Date.now();
+
     }, 1000)
 }
-
+console.log("${hours}:${mins}:${seconds}");
 function convertMs(ms) {
   // Number of milliseconds per unit of time
   const second = 1000;
