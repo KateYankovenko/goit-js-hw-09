@@ -26,12 +26,12 @@ const options = {
   minuteIncrement: 1,
   onClose(selectedDates) {
     //   Notify(selectedDates[0]);
-       if(selectedDates[0].getTime() < defaultDate) {
+       if(selectedDates[0].getTime() < Date.now()) {
            Notify.failure("Please choose a date in the future!");
           startBtn.disabled = true;
        } else {
            deadline = selectedDates[0];
-           startButton.disabled = false;
+           startBtn.disabled = false;
       }
     },  
 };
