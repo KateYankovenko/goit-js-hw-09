@@ -68,8 +68,8 @@ class Timer {
     }
     convertMs(ms) {
         function addFirstZero(number) {
-    return String(number).padStart(2, '0');
-    }
+            return String(number).padStart(2, '0');
+        }
   // Number of milliseconds per unit of time
     const second = 1000;
     const minute = second * 60;
