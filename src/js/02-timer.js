@@ -43,27 +43,34 @@ const options = {
 flatpickr("#datetime-picker", options);
 
 class Timer {
-    constructor() {
+    constructor({onTick}) {
         this.intervalId = null;
         this.isActive = false;
+        this.onTick = onTick;
     }
     start() {
         if (this.isActive) {
             return;
         }
+        const startTime = deadline.getTime();
+        // this.isActive = true;
+        this.intervalId = setInterval(() => {
+            const currentTime = Date.now();
+            const remainingTime = startTime - currentTime;
+            const time = this.convertMs(remainingTime);
+            
+        if (remainingTime <= 0) {
+            clearInterval(this.intervalId);
+            return;
+        }
+            this.onTick(time); 
+        }, 1000)
     }
 // Натисканням на кнопку «Start» скрипт повинен обчислювати раз
 // на секунду, скільки часу залишилось до вказаної дати, і
 // оновлювати інтерфейс таймера, показуючи чотири цифри: дні,
 // години, хвилини і секунди у форматі xx: xx: xx: xx.
 
-const dataTimePick = () => {
-    onStartBtnPress(() => {
-        const currentTime = Date.now();
-
-    }, 1000)
-}
-console.log("${hours}:${mins}:${seconds}");
 function convertMs(ms) {
   // Number of milliseconds per unit of time
   const second = 1000;
