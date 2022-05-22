@@ -8,8 +8,12 @@ import Notiflix from 'notiflix';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const refs = {
- dataPicker: document.querySelector("#datetime-picker"),
- startBtn: document.querySelector("button[data-start]"),
+    dataPicker: document.querySelector("#datetime-picker"),
+    startBtn: document.querySelector("button[data-start]"),
+    days: document.querySelector("span[data-days]"),
+    hours: document.querySelector("span[data-hours]"),
+    minutes: document.querySelector("span[data-minutes]"),
+    seconds: document.querySelector("span[data-seconds]"),
 }
 
 
