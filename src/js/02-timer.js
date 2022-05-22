@@ -46,7 +46,6 @@ class Timer {
     constructor() {
         this.intervalId = null;
         this.isActive = false;
-        this.onTick = onTick;
     }
     start() {
     if (this.isActive) {
