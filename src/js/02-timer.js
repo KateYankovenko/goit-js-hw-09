@@ -17,9 +17,9 @@ const refs = {
 }
 
 let deadline = null;
-
+refs.startBtn.disabled = true;
 refs.startBtn.addEventListener('click', () => {
-   timer.start() 
+    timer.start(); 
 });
 
 //options object from flatpickr lib
@@ -43,7 +43,7 @@ const options = {
 flatpickr("#datetime-picker", options);
 
 class Timer {
-    constructor({onTick}) {
+    constructor({ onTick }) {
         this.intervalId = null;
         this.isActive = false;
         this.onTick = onTick;
@@ -59,19 +59,14 @@ class Timer {
             const remainingTime = startTime - currentTime;
             const time = this.convertMs(remainingTime);
             
-        if (remainingTime <= 0) {
-            clearInterval(this.intervalId);
-            return;
-        }
-            this.onTick(time); 
+            if (remainingTime <= 0) {
+                clearInterval(this.intervalId);
+                return;
+            }
+            this.onTick(time);
         }, 1000)
     }
-// Натисканням на кнопку «Start» скрипт повинен обчислювати раз
-// на секунду, скільки часу залишилось до вказаної дати, і
-// оновлювати інтерфейс таймера, показуючи чотири цифри: дні,
-// години, хвилини і секунди у форматі xx: xx: xx: xx.
-
-function convertMs(ms) {
+    convertMs(ms) {
   // Number of milliseconds per unit of time
   const second = 1000;
   const minute = second * 60;
@@ -89,3 +84,20 @@ function convertMs(ms) {
 
   return { days, hours, minutes, seconds };
 }
+}
+//a new timer from the class
+const timer = new Timer({
+    onTick: updTimer,
+});
+
+ function updTimer({days, hours, minutes, seconds}) {
+    refs.days.textContent = `${days}`;
+    refs.hours.textContent = `${hours}`;
+    refs.minutes.textContent = `${minutes}`;
+    refs.seconds.textContent = `${seconds}`;
+ }
+// Натисканням на кнопку «Start» скрипт повинен обчислювати раз
+// на секунду, скільки часу залишилось до вказаної дати, і
+// оновлювати інтерфейс таймера, показуючи чотири цифри: дні,
+// години, хвилини і секунди у форматі xx: xx: xx: xx.
+
