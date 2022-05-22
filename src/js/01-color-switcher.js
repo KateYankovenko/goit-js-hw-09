@@ -9,9 +9,9 @@ const INTERVAL_DELAY = 1000;
 // body color changes bcz of the setTimeout callback will appear.
 
 
-// function getRandomHexColor() {
-//   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-// }
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+}
 
 
 startBtn.addEventListener("click", () => {
