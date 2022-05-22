@@ -1,12 +1,8 @@
 const startBtn = document.querySelector("button[data-start]");
 const stopBtn = document.querySelector("button[data-stop]");
-const body = document.querySelector("body");
+
 let timerId = null;
 const INTERVAL_DELAY = 1000;
-
-
-// One second after clicking the startBtn, 
-// body color changes bcz of the setTimeout callback will appear.
 
 
 function getRandomHexColor() {
@@ -23,21 +19,10 @@ startBtn.addEventListener("click", () => {
 
 
 stopBtn.addEventListener("click", () => {
-  clearInterval(timerId);
-  console.log(`Interval with id ${timerId} has stopped!`);
+    clearInterval(timerId);
+    startBtn.disabled = false;
+    console.log(`Color changing was stopped!`);
 });
-
-// const onClick = () => {
-//   setTimeout(() => {
-//     console.log("set time");
-//   }, 1000);
-// };
-// startBtn.addEventListener("click", onClick);
-
-
-
-
-
 
 
 // Напиши скрипт, який після натискання кнопки «Start», раз на 
