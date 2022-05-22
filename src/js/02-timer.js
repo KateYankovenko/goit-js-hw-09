@@ -17,6 +17,7 @@ const refs = {
 }
 
 
+//options object from flatpickr lib
 const options = {
   enableTime: true,
   time_24hr: true,
@@ -26,3 +27,5 @@ const options = {
     console.log(selectedDates[0]);
   },
 };
+// функція flatpickr(selector, options)
+flatpickr("#datetime-picker", options);
