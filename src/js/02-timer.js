@@ -16,6 +16,7 @@ const refs = {
     seconds: document.querySelector("[data-seconds]"),
 }
 
+let deadline = null;
 
 //options object from flatpickr lib
 const options = {
@@ -24,8 +25,15 @@ const options = {
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
-    console.log(selectedDates[0]);
-  },
+    //   Notify(selectedDates[0]);
+       if(selectedDates[0].getTime() < defaultDate) {
+           Notify.failure("Please choose a date in the future!");
+          startBtn.disabled = true;
+       } else {
+           deadline = selectedDates[0];
+           startButton.disabled = false;
+      }
+    },  
 };
 // функція flatpickr(selector, options)
 flatpickr("#datetime-picker", options);
