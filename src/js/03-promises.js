@@ -7,6 +7,7 @@ import { Confirm } from 'notiflix/build/notiflix-confirm-aio';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import { Block } from 'notiflix/build/notiflix-block-aio';
 
+const form = document.querySelector('.form');
 
 function createPromise(position, delay) {
   const shouldResolve = Math.random() > 0.3;
