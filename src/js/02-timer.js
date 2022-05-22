@@ -27,7 +27,7 @@ const options = {
   onClose(selectedDates) {
     //   Notify(selectedDates[0]);
        if(selectedDates[0].getTime() < Date.now()) {
-           Notify.failure("Please choose a date in the future!");
+          Notify.failure("Please choose a date in the future!");
           refs.startBtn.disabled = true;
        } else {
            deadline = selectedDates[0];
@@ -37,3 +37,14 @@ const options = {
 };
 // функція flatpickr(selector, options)
 flatpickr("#datetime-picker", options);
+
+// Натисканням на кнопку «Start» скрипт повинен обчислювати раз
+// на секунду, скільки часу залишилось до вказаної дати, і
+// оновлювати інтерфейс таймера, показуючи чотири цифри: дні,
+// години, хвилини і секунди у форматі xx: xx: xx: xx.
+
+const dataTimePick = () => {
+    onStartBtnPress(() => {
+        
+    }, 1000)
+}
