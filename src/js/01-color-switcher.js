@@ -2,19 +2,23 @@ const startBtn = document.querySelector("button[data-start]");
 const stopBtn = document.querySelector("button[data-stop]");
 const body = document.querySelector("body");
 let timerId = null;
+const INTERVAL_DELAY = 1000;
+
+
 // One second after clicking the startBtn, 
 // body color changes bcz of the setTimeout callback will appear.
 
 
-const randomClr = function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-}
+// function getRandomHexColor() {
+//   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+// }
 
 
 startBtn.addEventListener("click", () => {
-  timerId = setInterval(() => {
-    console.log(`I love async JS!  ${Math.random()}`);
-  }, 1000);
+    timerId = setInterval(() => {
+      document.body.style.backgroundColor = getRandomHexColor();
+  }, INTERVAL_DELAY);
+    startBtn.disabled = true;
 });
 
 
